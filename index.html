@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alex Chadburn's software development ePortfolio">
+  <title>Alex Chadburn | Software Development ePortfolio</title>
+
+  <style>
+    :root {
+      --navy: #173247;
+      --ink: #1c2935;
+      --muted: #526273;
+      --page: #f4f7fa;
+      --surface: #ffffff;
+      --accent: #176b5b;
+      --border: #dbe3ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.7 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:focus-visible {
+      outline: 3px solid #e1a900;
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      width: min(940px, calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+    header {
+      padding: 3.5rem 0 2.5rem;
+      background: var(--navy);
+      color: #fff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      line-height: 1.15;
+    }
+
+    header p {
+      max-width: 700px;
+      color: #e1eaf0;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    nav a {
+      color: #d3f2e6;
+    }
+
+    main {
+      padding-block: 2rem 3rem;
+    }
+
+    section {
+      margin-bottom: 1.25rem;
+      padding: clamp(1.25rem, 4vw, 2rem);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgb(23 50 71 / 4%);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--navy);
+      font-size: 1.55rem;
+      line-height: 1.3;
+    }
+
+    .category {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 600;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: .4rem;
+      font-weight: 650;
+    }
+
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+      background: #f0f4f7;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: .92em;
+    }
+
+    .video {
+      width: min(100%, 800px);
+      aspect-ratio: 16 / 9;
+      margin-top: 1rem;
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    footer {
+      padding: 1.25rem 0;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Alex Chadburn</h1>
+      <p>Software Development ePortfolio</p>
+      <p>
+        This portfolio presents three software enhancements: improving a
+        software testing project, refining embedded systems logic, and adding
+        database functionality to a C++ banking program.
+      </p>
+
+      <nav aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#code-review">Code Review</a>
+        <a href="#software-design">Software Design</a>
+        <a href="#algorithms">Algorithms</a>
+        <a href="#databases">Databases</a>
+        <a href="#self-assessment">Self-Assessment</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="overview">
+      <h2>Portfolio Overview</h2>
+      <p>
+        The projects show how I worked with existing software, identified
+        areas to improve, and tested changes. They cover build and regression
+        testing, embedded system control flow, and persistent account data.
+      </p>
+    </section>
+
+    <section id="code-review">
+      <h2>Code Review</h2>
+      <p>Watch my code review video.</p>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/zCotowqwJMQ"
+          title="Code review video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p>
+        <a href="https://youtu.be/zCotowqwJMQ">
+          Open the code review video on YouTube
+        </a>
+      </p>
+    </section>
+
+    <section id="software-design">
+      <h2>Software Design and Engineering</h2>
+      <p class="category">Software Testing Project</p>
+
+      <p>
+        I added a <code>pom.xml</code> and organized the project architecture
+        to support regression testing. This provides a repeatable way to build
+        the project and check that changes do not disrupt existing
+        functionality.
+      </p>
+      <p>
+        I use <code>mvn clean package</code> to build the project. When I also
+        need to copy dependencies, I use
+        <code>mvn clean package dependency:copy-dependencies</code>.
+      </p>
+
+      <a
+        class="project-link"
+        href="https://github.com/Alex-Chadburn/E-Portfolio/tree/main/Software%20test"
+        target="_blank"
+        rel="noopener noreferrer">
+        View Software Testing project files on GitHub
+      </a>
+    </section>
+
+    <section id="algorithms">
+      <h2>Algorithms and Data Structures</h2>
+      <p class="category">Embedded Systems Project</p>
+
+      <p>
+        I used debug output to investigate why the program paused at the wrong
+        times. I traced the issue to misplaced indentation and corrected the
+        logic. I also simplified the iteration using <code>enumerate</code>,
+        removed irrelevant auto-generated comments, and removed the debug flag.
+      </p>
+      <p>
+        I tested the changes on a Raspberry Pi and checked the console output.
+        These changes made the control flow easier to follow.
+      </p>
+
+      <a
+        class="project-link"
+        href="https://github.com/Alex-Chadburn/E-Portfolio/tree/main/Embedded%20Systems"
+        target="_blank"
+        rel="noopener noreferrer">
+        View Embedded Systems project files on GitHub
+      </a>
+    </section>
+
+    <section id="databases">
+      <h2>Databases</h2>
+      <p class="category">C++ Banking Program</p>
+
+      <p>
+        The program continues to accept and validate financial information,
+        including the interest rate, monthly deposit, and initial deposit, and
+        calculate investment growth. I extended it so users can save account
+        details to a database and retrieve them later. When an account is
+        checked, the program recalculates its growth to reflect elapsed time.
+      </p>
+      <p>
+        I organized the project into separate folders for dependencies, include
+        files, and source files. I used the C++ <code>chrono</code> library and
+        date parsing to work with elapsed time.
+      </p>
+      <p>The program can be compiled with Microsoft’s C++ compiler using:</p>
+      <pre><code>cl /EHsc /std:c++20 /I includes /I dependencies src\main.cpp src\account_input.cpp src\banking.cpp src\database.cpp src\database_menu.cpp dependencies\sqlite3.c /Fe:Banking.exe</code></pre>
+
+      <a
+        class="project-link"
+        href="https://github.com/Alex-Chadburn/E-Portfolio/tree/main/CPlusPlus-Program-main/Banking"
+        target="_blank"
+        rel="noopener noreferrer">
+        View Banking project files on GitHub
+      </a>
+    </section>
+
+    <section id="self-assessment">
+      <h2>Professional Self-Assessment</h2>
+
+      <p>
+        These projects reflect a practical approach to software development:
+        understand how an existing program behaves, make a targeted change,
+        and check the result. In the Software Testing project, I organized the
+        build to support regression testing. In the Embedded Systems project,
+        I used debug output to locate a control-flow issue and tested the
+        change on a Raspberry Pi. In the Banking program, I extended the
+        existing calculator with database storage and account retrieval while
+        retaining its original functionality.
+      </p>
+      <p>
+        Across the projects, I worked to make software easier to build,
+        understand, and extend. The artifacts demonstrate my experience with
+        testing practices, debugging, code organization, and adding
+        functionality to an existing application.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Alex Chadburn · Software Development ePortfolio</div>
+  </footer>
+</body>
+</html>
