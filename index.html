@@ -1,9 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Alex Chadburn's software development ePortfolio">
+  <meta
+    name="description"
+    content="Alex Chadburn's software development ePortfolio, featuring projects in software testing, embedded systems, and database development."
+  >
   <title>Alex Chadburn | Software Development ePortfolio</title>
 
   <style>
@@ -85,6 +88,7 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       box-shadow: 0 4px 16px rgb(23 50 71 / 4%);
+      scroll-margin-top: 1rem;
     }
 
     h2 {
@@ -99,6 +103,15 @@
       color: var(--muted);
       font-size: .95rem;
       font-weight: 600;
+    }
+
+    .project-links {
+      margin: .75rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    .project-links li + li {
+      margin-top: .35rem;
     }
 
     .project-link {
@@ -127,6 +140,7 @@
     }
 
     .video iframe {
+      display: block;
       width: 100%;
       height: 100%;
       border: 0;
@@ -145,7 +159,7 @@
   <header>
     <div class="wrap">
       <h1>Alex Chadburn</h1>
-      <p>Software Development ePortfolio</p>
+      <p><strong>Software Development ePortfolio</strong></p>
       <p>
         This portfolio presents three software enhancements: improving a
         software testing project, refining embedded systems logic, and adding
@@ -153,23 +167,47 @@
       </p>
 
       <nav aria-label="Main navigation">
+        <a href="#self-assessment">Self-Assessment</a>
         <a href="#overview">Overview</a>
         <a href="#code-review">Code Review</a>
         <a href="#software-design">Software Design</a>
         <a href="#algorithms">Algorithms</a>
         <a href="#databases">Databases</a>
-        <a href="#self-assessment">Self-Assessment</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
+    <section id="self-assessment">
+      <h2>Professional Self-Assessment</h2>
+
+      <p>
+        These projects reflect a practical approach to software development:
+        understand how an existing program behaves, make a targeted change,
+        and check the result. In the Software Testing project, I organized the
+        build to support regression testing. In the Embedded Systems project,
+        I investigated a control-flow issue and tested the correction on a
+        Raspberry Pi. In the Banking program, I extended the existing
+        application with database storage and account retrieval while
+        retaining its original functionality.
+      </p>
+
+      <p>
+        Across the projects, I worked to make software easier to build,
+        understand, and extend. The artifacts demonstrate my experience with
+        testing practices, debugging, code organization, and adding
+        functionality to existing applications.
+      </p>
+    </section>
+
     <section id="overview">
       <h2>Portfolio Overview</h2>
       <p>
         The projects show how I worked with existing software, identified
         areas to improve, and tested changes. They cover build and regression
         testing, embedded system control flow, and persistent account data.
+        Each project section provides links to both the original artifact and
+        the enhanced files.
       </p>
     </section>
 
@@ -180,7 +218,7 @@
       <div class="video">
         <iframe
           src="https://www.youtube.com/embed/zCotowqwJMQ"
-          title="Code review video"
+          title="Alex Chadburn's code review video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
@@ -188,7 +226,10 @@
       </div>
 
       <p>
-        <a href="https://youtu.be/zCotowqwJMQ">
+        <a
+          href="https://youtu.be/zCotowqwJMQ"
+          target="_blank"
+          rel="noopener noreferrer">
           Open the code review video on YouTube
         </a>
       </p>
@@ -204,19 +245,31 @@
         the project and check that changes do not disrupt existing
         functionality.
       </p>
+
       <p>
         I use <code>mvn clean package</code> to build the project. When I also
         need to copy dependencies, I use
         <code>mvn clean package dependency:copy-dependencies</code>.
       </p>
 
-      <a
-        class="project-link"
-        href="https://github.com/Alex-Chadburn/E-Portfolio/tree/main/Software%20test"
-        target="_blank"
-        rel="noopener noreferrer">
-        View Software Testing project files on GitHub
-      </a>
+      <ul class="project-links">
+        <li>
+          <a
+            href="https://github.com/Alex-Chadburn/Software-test-reflection"
+            target="_blank"
+            rel="noopener noreferrer">
+            View original Software Testing artifact
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/Alex-Chadburn/E-Portfolio/tree/main/Software%20test"
+            target="_blank"
+            rel="noopener noreferrer">
+            View enhanced Software Testing files
+          </a>
+        </li>
+      </ul>
     </section>
 
     <section id="algorithms">
@@ -224,23 +277,36 @@
       <p class="category">Embedded Systems Project</p>
 
       <p>
-        I used debug output to investigate why the program paused at the wrong
-        times. I traced the issue to misplaced indentation and corrected the
-        logic. I also simplified the iteration using <code>enumerate</code>,
-        removed irrelevant auto-generated comments, and removed the debug flag.
-      </p>
-      <p>
-        I tested the changes on a Raspberry Pi and checked the console output.
-        These changes made the control flow easier to follow.
+        In my initial code review, I suspected asynchronous behavior and sleep
+        timing were causing the issue. Further investigation showed that the
+        actual cause was incorrect indentation affecting control flow. I
+        corrected the indentation and tested the change on a Raspberry Pi.
       </p>
 
-      <a
-        class="project-link"
-        href="https://github.com/Alex-Chadburn/E-Portfolio/tree/main/Embedded%20Systems"
-        target="_blank"
-        rel="noopener noreferrer">
-        View Embedded Systems project files on GitHub
-      </a>
+      <p>
+        I also simplified iteration using <code>enumerate</code>, removed
+        irrelevant comments, and removed the debug flag. These changes made
+        the code and its control flow easier to follow.
+      </p>
+
+      <ul class="project-links">
+        <li>
+          <a
+            href="https://github.com/Alex-Chadburn/CS-350-Emerging-Systems-Architecture/blob/main/Milestone3.py"
+            target="_blank"
+            rel="noopener noreferrer">
+            View original Embedded Systems artifact
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/Alex-Chadburn/E-Portfolio/tree/main/Embedded%20Systems"
+            target="_blank"
+            rel="noopener noreferrer">
+            View enhanced Embedded Systems files
+          </a>
+        </li>
+      </ul>
     </section>
 
     <section id="databases">
@@ -254,42 +320,35 @@
         details to a database and retrieve them later. When an account is
         checked, the program recalculates its growth to reflect elapsed time.
       </p>
+
       <p>
         I organized the project into separate folders for dependencies, include
         files, and source files. I used the C++ <code>chrono</code> library and
         date parsing to work with elapsed time.
       </p>
+
       <p>The program can be compiled with Microsoft’s C++ compiler using:</p>
+
       <pre><code>cl /EHsc /std:c++20 /I includes /I dependencies src\main.cpp src\account_input.cpp src\banking.cpp src\database.cpp src\database_menu.cpp dependencies\sqlite3.c /Fe:Banking.exe</code></pre>
 
-      <a
-        class="project-link"
-        href="https://github.com/Alex-Chadburn/E-Portfolio/tree/main/CPlusPlus-Program-main/Banking"
-        target="_blank"
-        rel="noopener noreferrer">
-        View Banking project files on GitHub
-      </a>
-    </section>
-
-    <section id="self-assessment">
-      <h2>Professional Self-Assessment</h2>
-
-      <p>
-        These projects reflect a practical approach to software development:
-        understand how an existing program behaves, make a targeted change,
-        and check the result. In the Software Testing project, I organized the
-        build to support regression testing. In the Embedded Systems project,
-        I used debug output to locate a control-flow issue and tested the
-        change on a Raspberry Pi. In the Banking program, I extended the
-        existing calculator with database storage and account retrieval while
-        retaining its original functionality.
-      </p>
-      <p>
-        Across the projects, I worked to make software easier to build,
-        understand, and extend. The artifacts demonstrate my experience with
-        testing practices, debugging, code organization, and adding
-        functionality to an existing application.
-      </p>
+      <ul class="project-links">
+        <li>
+          <a
+            href="https://github.com/Alex-Chadburn/CPlusPlus-Program"
+            target="_blank"
+            rel="noopener noreferrer">
+            View original C++ Banking artifact
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/Alex-Chadburn/E-Portfolio/tree/main/CPlusPlus-Program-main/Banking"
+            target="_blank"
+            rel="noopener noreferrer">
+            View enhanced Banking files
+          </a>
+        </li>
+      </ul>
     </section>
   </main>
 
